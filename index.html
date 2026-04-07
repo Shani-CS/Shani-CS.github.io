@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shani C Spivak — PhD Researcher</title>
+<title>Shani C Spivak — PhD Candidate</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Sora:wght@300;400;600;700;800&family=Crimson+Pro:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 <style>
@@ -295,7 +295,7 @@
   /* ── About ── */
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 280px 1fr;
     gap: 4rem;
     align-items: start;
   }
@@ -339,6 +339,7 @@
     fill: none;
     stroke-width: 1.5;
   }
+
   .about-text p {
     color: var(--clr-text-dim);
     font-size: 1.05rem;
@@ -534,7 +535,7 @@
     transform: translateY(0);
   }
 
- /* ── Scrollytelling Projects ── */
+  /* ── Scrollytelling Projects ── */
   .projects-wrapper {
     position: relative;
   }
@@ -757,12 +758,15 @@
   .scroll-dot:nth-child(3).active { background: var(--clr-accent-3); border-color: var(--clr-accent-3); box-shadow: 0 0 12px rgba(0,229,160,0.5); }
   .scroll-dot:nth-child(4).active { background: var(--clr-accent-4); border-color: var(--clr-accent-4); box-shadow: 0 0 12px rgba(255,60,142,0.5); }
 
-  
   /* ── Responsive ── */
   @media (max-width: 900px) {
     .hero { padding: 7rem 5vw 3rem; }
     .hero-deco { display: none; }
     .about-grid { grid-template-columns: 1fr; }
+    .project-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .project-scene:nth-child(even) .project-inner { direction: ltr; }
+    .project-visual { max-width: 400px; }
+    .scroll-dots { display: none; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { gap: 1rem; }
     .nav-links a { font-size: 0.75rem; }
@@ -782,9 +786,10 @@
 
 <!-- Navigation -->
 <nav>
-  <div class="nav-logo"></div>
+  <!-- <div class="nav-logo">YourName.dev</div> -->
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Research</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -795,17 +800,17 @@
   <div class="hero-content">
     <div class="hero-tag">PhD Candidate @ Northeastern University</div>
     <h1 class="hero-name">
-      <br><span class="highlight">Shani</span>
+      <br><span class="highlight">Shani C Spivak</span>
     </h1>
     <p class="hero-bio">
-      My research lies at the intersection of data visualization, AI evaluation, and AI ethics. I develop methods to identify, surface, and characterize LLM errors in data visualization tasks. My recent work includes a taxonomy of LLM errors and an interview study of data workers on their use of LLMs. 
+       My research lies at the intersection of data visualization, AI evaluation, and AI ethics. I develop methods to identify, surface, and characterize LLM errors in data visualization tasks. My recent work includes a taxonomy of LLM errors and an interview study of data workers on their use of LLMs. 
     </p>
     <div class="hero-links">
       <a href="#publications" class="btn btn-primary">View Research →</a>
-      <a href="YOUR_CV_LINK.pdf" class="btn btn-outline">Download CV</a>
+      <!-- <a href="YOUR_CV_LINK.pdf" class="btn btn-outline">Download CV</a> -->
     </div>
   </div>
- 
+
 </section>
 
 <!-- About -->
@@ -816,10 +821,12 @@
   </div>
   <div class="about-grid">
     <div class="about-photo-wrapper reveal">
-      <div class="about-photo-placeholder">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 12 0v1"/></svg>
-         <img src="bio pic.jpg"> 
-      </div>
+      <!--
+        HOW TO ADD YOUR PHOTO:
+        1. Add your photo file (e.g. "headshot.jpg") to the same repo/folder as this index.html
+        2. Replace "headshot.jpg" below with your actual filename
+      -->
+      <img src="bio pic.jpg" alt="Shani">
     </div>
     <div class="about-text reveal">
       <p>
@@ -831,10 +838,10 @@
       </p>
       <p>
         Before starting my PhD, I obtained my B.S. in Electrical Engineering from
-        Boston Univeraity and an MBA from NYU.
+        Boston University and an MBA from NYU.
       </p>
       <p>
-        Other Stuff I like: books, dogs, hiking.
+        Other Stuff I like: books, dogs, hiking
       </p>
       <div class="interests-tags">
         <span class="tag">Machine Learning</span>
@@ -878,16 +885,16 @@
           </div>
           <div class="project-content">
             <div class="project-number">Project 01</div>
-            <h3 class="project-name">Your Project Name</h3>
+            <h3 class="project-name">AUXEL</h3>
             <p class="project-desc">
-              A brief, compelling description of what this project does and why it matters. What problem does it solve? What's the novel approach? Keep it to 2–3 sentences that hook the reader.
+              An Intelligent Natural Language Interface to Improve the Accessibility of Complex Data Tasks for Blind or Visually Impaired STEM Employees. This research project supports the goal to increase accessibility of spreadsheet data to blind and low vision (BLV) STEM data professionals and scientists through the development of an intelligent natural language interface.
             </p>
             <div class="project-stack">
-              <span class="project-stack-tag">PyTorch</span>
-              <span class="project-stack-tag">Transformers</span>
-              <span class="project-stack-tag">CUDA</span>
+              <span class="project-stack-tag">Application</span>
+              <span class="project-stack-tag">User Study</span>
+              <!-- <span class="project-stack-tag">CUDA</span> -->
             </div>
-            <a href="#" class="project-cta">View on GitHub <span class="arrow">→</span></a>
+            <!-- <a href="#" class="project-cta">View on GitHub <span class="arrow">→</span></a> -->
           </div>
         </div>
       </div>
@@ -903,16 +910,17 @@
           </div>
           <div class="project-content">
             <div class="project-number">Project 02</div>
-            <h3 class="project-name">Another Cool Project</h3>
+            <h3 class="project-name">Visualizing People's Mental Models of AI</h3>
             <p class="project-desc">
-              Describe the second project here. Maybe it's a different angle of your research, a tool you built, or a collaboration. Highlight what makes it unique and what impact it has.
+              Investigating how people think about AI to start to get a baseline understanding of how people conceptualize AI systems working, get externalizations of “folk algorithms”/”folk theories”/mental models about AI.
+      
             </p>
             <div class="project-stack">
-              <span class="project-stack-tag">Python</span>
-              <span class="project-stack-tag">JAX</span>
-              <span class="project-stack-tag">React</span>
+              <span class="project-stack-tag">Workshops</span>
+              <span class="project-stack-tag">Survey</span>
+              <!-- <span class="project-stack-tag">React</span> -->
             </div>
-            <a href="#" class="project-cta">Read More <span class="arrow">→</span></a>
+            <!-- <a href="#" class="project-cta">Read More <span class="arrow">→</span></a> -->
           </div>
         </div>
       </div>
@@ -928,16 +936,16 @@
           </div>
           <div class="project-content">
             <div class="project-number">Project 03</div>
-            <h3 class="project-name">Open-Source Tool or Library</h3>
+            <h3 class="project-name">Surfacing LLM Errors: Can Visualizations Help Users Identify LLM Errors?</h3>
             <p class="project-desc">
-              Perhaps you've built an open-source library or benchmark. Talk about its adoption, the community around it, and what problems it addresses for other researchers.
+              Using four different code visualization techniques in a user study, we explore whether they help participants identify errors in data visualization tasks.
             </p>
             <div class="project-stack">
-              <span class="project-stack-tag">Rust</span>
-              <span class="project-stack-tag">HuggingFace</span>
-              <span class="project-stack-tag">Docker</span>
+              <span class="project-stack-tag">User Study</span>
+              <!-- <span class="project-stack-tag">HuggingFace</span>
+              <span class="project-stack-tag">Docker</span> -->
             </div>
-            <a href="#" class="project-cta">Try It Out <span class="arrow">→</span></a>
+            <!-- <a href="#" class="project-cta">Try It Out <span class="arrow">→</span></a> -->
           </div>
         </div>
       </div>
@@ -953,16 +961,15 @@
           </div>
           <div class="project-content">
             <div class="project-number">Project 04</div>
-            <h3 class="project-name">Collaborative Research Initiative</h3>
+            <h3 class="project-name">IEEE VIS 2026 OPC Assistant</h3>
             <p class="project-desc">
-              A cross-lab or cross-institution project you're involved in. Describe the vision, your specific contribution, and any early results or milestones you've reached.
-            </p>
+              Providing logistical, operational, and organizational support to the IEEE VIS Overall Paper Chairs.
             <div class="project-stack">
-              <span class="project-stack-tag">TensorFlow</span>
+              <!-- <span class="project-stack-tag">TensorFlow</span>
               <span class="project-stack-tag">Weights & Biases</span>
-              <span class="project-stack-tag">Slurm</span>
+              <span class="project-stack-tag">Slurm</span> -->
             </div>
-            <a href="#" class="project-cta">Learn More <span class="arrow">→</span></a>
+            <a href="https://ieeevis.org/year/2026/welcome/" class="project-cta">Learn More <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -970,7 +977,7 @@
     </div>
   </div>
 </section>
-  
+
 <!-- Publications -->
 <section id="publications">
   <div class="reveal">
@@ -1033,15 +1040,16 @@
    
   </div>
 </section>
-
+  
 <!-- Footer -->
 <footer>
-
-  <span class="made-with">Work in Progress</span>
+  <span>© 2026 Your Name. All rights reserved.</span>
+  <span class="made-with">Built with care & caffeine</span>
 </footer>
 
-<!-- Scroll reveal animation -->
+<!-- Scroll reveal + scrollytelling -->
 <script>
+  // General reveal-on-scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1051,6 +1059,44 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Scrollytelling: activate project scenes when they enter viewport
+  const scenes = document.querySelectorAll('.project-scene');
+  const dots = document.querySelectorAll('.scroll-dot');
+  const dotsContainer = document.getElementById('scrollDots');
+  const projectsSection = document.getElementById('projects');
+
+  const sceneObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        const idx = entry.target.dataset.project;
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[idx]) dots[idx].classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  scenes.forEach(scene => sceneObserver.observe(scene));
+
+  // Show/hide dots only when inside projects section
+  const dotsVisibility = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      dotsContainer.classList.toggle('visible', entry.isIntersecting);
+    });
+  }, { threshold: 0.05 });
+
+  dotsVisibility.observe(projectsSection);
+
+  // Click dots to scroll to project
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = dot.dataset.index;
+      scenes[idx]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
 </script>
 
 </body>
