@@ -11,9 +11,9 @@
     --clr-bg: #0a0a0f;
     --clr-surface: #12121a;
     --clr-text: #e8e6e1;
-    --clr-text-dim: #b0abbe;
+    --clr-text-dim: #9994a8;
     --clr-accent-1: #ff6b35;
-    --clr-accent-2: #9b75ff;
+    --clr-accent-2: #7b4dff;
     --clr-accent-3: #00e5a0;
     --clr-accent-4: #ff3c8e;
     --clr-accent-5: #ffe156;
@@ -22,52 +22,6 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  /* ── Skip to content link ── */
-  .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 1rem;
-    background: var(--clr-accent-1);
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0 0 8px 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    z-index: 10000;
-    text-decoration: none;
-    transition: top 0.2s;
-  }
-  .skip-link:focus {
-    top: 0;
-    outline: 3px solid var(--clr-accent-5);
-    outline-offset: 2px;
-  }
-
-  /* ── Visible focus styles for keyboard navigation ── */
-  *:focus-visible {
-    outline: 3px solid var(--clr-accent-5);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  /* ── Reduced motion preference ── */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-    .bg-mesh { animation: none; }
-    .reveal { opacity: 1; transform: none; transition: none; }
-    .hero-tag, .hero-name, .hero-bio, .hero-links, .hero-deco {
-      opacity: 1; animation: none;
-    }
-    .project-visual, .project-content {
-      opacity: 1; transform: none; transition: none;
-    }
-  }
 
   html { scroll-behavior: smooth; }
 
@@ -136,21 +90,17 @@
 
   .nav-links a {
     color: var(--clr-text-dim);
-    text-decoration: underline;
-    text-decoration-color: rgba(176, 171, 190, 0.4);
-    text-underline-offset: 4px;
+    text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: color 0.3s, text-shadow 0.3s, text-decoration-color 0.3s;
+    transition: color 0.3s, text-shadow 0.3s;
   }
 
-  .nav-links a:hover,
-  .nav-links a:focus {
+  .nav-links a:hover {
     color: var(--clr-accent-5);
     text-shadow: 0 0 20px rgba(255, 225, 86, 0.4);
-    text-decoration-color: var(--clr-accent-5);
   }
 
   /* ── Hero ── */
@@ -510,9 +460,7 @@
     font-family: var(--font-mono);
     font-size: 0.72rem;
     color: var(--clr-text-dim);
-    text-decoration: underline;
-    text-decoration-color: rgba(176, 171, 190, 0.4);
-    text-underline-offset: 3px;
+    text-decoration: none;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.1);
@@ -543,12 +491,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-  }
-
-  .contact-card .contact-value {
-    text-decoration: underline;
-    text-decoration-color: rgba(176, 171, 190, 0.4);
-    text-underline-offset: 3px;
   }
 
   .contact-card:hover {
@@ -784,8 +726,7 @@
     gap: 0.5rem;
     font-size: 0.85rem;
     font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
     transition: all 0.3s;
   }
 
@@ -826,8 +767,6 @@
     border: 1.5px solid rgba(255,255,255,0.2);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
-    padding: 0;
-    font: inherit;
   }
 
   .scroll-dot.active {
@@ -864,12 +803,10 @@
 </head>
 <body>
 
-<div class="bg-mesh" aria-hidden="true"></div>
-
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="bg-mesh"></div>
 
 <!-- Navigation -->
-<nav aria-label="Main navigation">
+<nav>
   <!-- <div class="nav-logo">YourName.dev</div> -->
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -879,14 +816,12 @@
   </ul>
 </nav>
 
-<main id="main-content">
-
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-tag">PhD Candidate @ Northeastern University</div>
     <h1 class="hero-name">
-      <span class="highlight">Shani C Spivak</span>
+      <br><span class="highlight">Shani C Spivak</span>
     </h1>
     <div class="about-text reveal">
       <p>
@@ -894,8 +829,8 @@
       </p>
     </div>
     <div class="hero-links">
-      <a href="https://vis.khoury.northeastern.edu/" target="_blank" aria-label="Visualization Lab at Khoury College, Northeastern University">
-      <img src="lab-logo.png" alt="Visualization Lab at Khoury College logo" style="height:80px;">
+      <a href="https://vis.khoury.northeastern.edu/" target="_blank">
+      <img src="lab-logo.png" alt="Lab Name" style="height:80px;">
       </a>
       <a href="#about" class="btn btn-outline">About Me →</a>
       <a href="#projects" class="btn btn-outline">Projects →</a>
@@ -919,7 +854,7 @@
         1. Add your photo file (e.g. "headshot.jpg") to the same repo/folder as this index.html
         2. Replace "headshot.jpg" below with your actual filename
       -->
-      <img src="bio pic.jpg" alt="Portrait photo of Shani C Spivak">
+      <img src="bio pic.jpg" alt="Shani">
     </div>
     <div class="about-text reveal">
       <p>
@@ -961,12 +896,12 @@
   </div>
 
   <!-- Scroll progress dots (fixed on right side) -->
-  <nav class="scroll-dots" id="scrollDots" aria-label="Project navigation">
-    <button class="scroll-dot" data-index="0" aria-label="Go to Project 1: AUXEL" type="button"></button>
-    <button class="scroll-dot" data-index="1" aria-label="Go to Project 2: Mental Models of AI" type="button"></button>
-    <button class="scroll-dot" data-index="2" aria-label="Go to Project 3: Surfacing LLM Errors" type="button"></button>
-    <button class="scroll-dot" data-index="3" aria-label="Go to Project 4: IEEE VIS 2026" type="button"></button>
-  </nav>
+  <div class="scroll-dots" id="scrollDots">
+    <div class="scroll-dot" data-index="0"></div>
+    <div class="scroll-dot" data-index="1"></div>
+    <div class="scroll-dot" data-index="2"></div>
+    <div class="scroll-dot" data-index="3"></div>
+  </div>
 
   <div class="projects-wrapper">
     <div class="projects-track">
@@ -977,7 +912,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg> -->
-              <img src="Auxel.jpg" alt="Screenshot of the AUXEL natural language interface for accessible data tasks" style="width:100%;height:100%;object-fit:cover;">
+              <img src="Auxel.jpg" alt="Project 1" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1002,7 +937,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg> -->
-              <img src="AIMM.jpg" alt="Visualization of people's mental models of AI systems" style="width:100%;height:100%;object-fit:cover;">
+              <img src="AIMM.jpg" alt="Project 2" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1028,7 +963,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h10M4 18h14"/></svg> -->
-              <img src="LLMErrors.jpg" alt="Code visualizations used to help users identify LLM errors" style="width:100%;height:100%;object-fit:cover;">
+              <img src="LLMErrors.jpg" alt="Project 3" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1053,7 +988,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> -->
-              <img src="2026VIS.jpg" alt="IEEE VIS 2026 conference branding" style="width:100%;height:100%;object-fit:cover;">
+              <img src="2026VIS.jpg" alt="Project 1" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1067,7 +1002,7 @@
               <span class="project-stack-tag">Slurm</span> -->
             </div>
          
-            <a href="https://ieeevis.org/year/2026/welcome/" target="_blank" rel="noopener" class="project-cta">Learn More <span class="arrow" aria-hidden="true">→</span></a>
+            <a href="https://ieeevis.org/year/2026/welcome/" target="_blank" class="project-cta">Learn More <span class="arrow">→</span></a>
           </div>
         </div>
       </div>
@@ -1090,13 +1025,13 @@
         <div class="pub-title">Fiction vs Friction: Challenges in Evaluating LLMs on Data Visualization Tasks</div>
         <div class="pub-authors"><span class="me">Shani C Spivak</span>, Melanie Tory</div>
         <div class="pub-links">
-          <a href="https://heal-workshop.github.io/chi2025_papers/fiction_vs_friction.pdf" target="_blank" class="pub-link" aria-label="PDF of Fiction vs Friction paper">[PDF]</a>
+          <a href="https://heal-workshop.github.io/chi2025_papers/fiction_vs_friction.pdf" target="_blank" class="pub-link">[PDF]</a>
           <!-- <a href="#" class="pub-link">[Code]</a>
           <a href="#" class="pub-link">[BibTeX]</a> -->
         </div>
       </div>
       <div class="pub-card-img">
-        <img src="HEAL.png" alt="Figure from Fiction vs Friction paper showing LLM evaluation challenges">
+        <img src="HEAL.png" alt="Paper figure">
       </div>
     </div>
 
@@ -1106,13 +1041,13 @@
         <div class="pub-title">The Many Tendrils of the Octopus Map</div>
         <div class="pub-authors">Eduardo Puerta*, <span class="me">Shani C Spivak*</span>, Michael Correll</div>
         <div class="pub-links">
-          <a href="https://dl.acm.org/doi/10.1145/3706598.3713583" target="_blank" class="pub-link" aria-label="PDF of The Many Tendrils of the Octopus Map paper">[PDF]</a>
-          <a href="https://osf.io/8n5ah/overview?view_only=7f14c46cd644467fbe89c6ce4c01eb2a" target="_blank" class="pub-link" aria-label="Open Science Framework materials for Octopus Map paper">[OSF]</a>
+          <a href="https://dl.acm.org/doi/10.1145/3706598.3713583" target="_blank" class="pub-link">[PDF]</a>
+          <a href="https://osf.io/8n5ah/overview?view_only=7f14c46cd644467fbe89c6ce4c01eb2a" target="_blank" class="pub-link">[OSF]</a>
           <!-- <a href="#" class="pub-link">[Poster]</a> -->
         </div>
       </div>
       <div class="pub-card-img">
-        <img src="Octopus.png" alt="Figure from The Many Tendrils of the Octopus Map paper">
+        <img src="Octopus.png" alt="Paper figure">
       </div>
     </div> 
 
@@ -1140,23 +1075,23 @@
     <h2 class="section-title">Let's Connect</h2>
   </div>
   <div class="contact-grid reveal">
-    <a href="/cdn-cgi/l/email-protection#b0c3c0d9c6d1db9ec3f0dedfc2c4d8d5d1c3c4d5c2de9ed5d4c5" class="contact-card" aria-label="Email Shani Spivak">
-      <div class="contact-icon" aria-hidden="true">✉️</div>
+    <a href="mailto:spivak.s@northeastern.edu" class="contact-card">
+      <div class="contact-icon">✉️</div>
       <div class="contact-label">Email</div>
-      <div class="contact-value"><span class="__cf_email__" data-cfemail="dcafacb5aabdb7f2af9cb2b3aea8b4b9bdafa8b9aeb2f2b9b8a9">[email&#160;protected]</span></div>
+      <div class="contact-value">spivak.s@northeastern.edu</div>
     </a>
-    <a href="https://scholar.google.com/citations?user=v8--kpYAAAAJ&hl=en" target="_blank" class="contact-card" aria-label="Shani Spivak on Google Scholar">
-      <div class="contact-icon" aria-hidden="true">🎓</div>
+    <a href="https://scholar.google.com/citations?user=v8--kpYAAAAJ&hl=en" target="_blank" class="contact-card">
+      <div class="contact-icon">🎓</div>
       <div class="contact-label">Google Scholar</div>
       <div class="contact-value">Shani Spivak</div>
     </a>
-    <a href="https://github.com/Shani-CS" target="_blank" class="contact-card" aria-label="Shani Spivak on GitHub">
-      <div class="contact-icon" aria-hidden="true">💻</div>
+    <a href="https://github.com/Shani-CS" target="_blank" class="contact-card">
+      <div class="contact-icon">💻</div>
       <div class="contact-label">GitHub</div>
       <div class="contact-value">@Shani-CS</div>
     </a>
-     <a href="https://linkedin.com/in/shani-cs" target="_blank" class="contact-card" aria-label="Shani Spivak on LinkedIn">
-      <div class="contact-icon" aria-hidden="true">💼</div>
+     <a href="https://linkedin.com/in/shani-cs" target="_blank" class="contact-card">
+      <div class="contact-icon">💼</div>
       <div class="contact-label">LinkedIn</div>
       <div class="contact-value">@shani-cs</div>
     </a>
@@ -1164,8 +1099,6 @@
   </div>
 </section>
   
-</main>
-
 <!-- Footer -->
 <footer>
   <!-- <span>© 2026 Your Name. All rights reserved.</span> -->
@@ -1173,7 +1106,7 @@
 </footer>
 
 <!-- Scroll reveal + scrollytelling -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // General reveal-on-scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -1196,14 +1129,8 @@
       if (entry.isIntersecting) {
         entry.target.classList.add('active');
         const idx = entry.target.dataset.project;
-        dots.forEach(d => {
-          d.classList.remove('active');
-          d.setAttribute('aria-current', 'false');
-        });
-        if (dots[idx]) {
-          dots[idx].classList.add('active');
-          dots[idx].setAttribute('aria-current', 'true');
-        }
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[idx]) dots[idx].classList.add('active');
       } else {
         entry.target.classList.remove('active');
       }
@@ -1211,15 +1138,6 @@
   }, { threshold: 0.4 });
 
   scenes.forEach(scene => sceneObserver.observe(scene));
-
-  // Dot click handlers — scroll to corresponding project
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      if (scenes[i]) {
-        scenes[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
-  });
 
   // Show/hide dots only when inside projects section
   const dotsVisibility = new IntersectionObserver((entries) => {
@@ -1229,6 +1147,15 @@
   }, { threshold: 0.05 });
 
   dotsVisibility.observe(projectsSection);
+
+  // Click dots to scroll to project
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = dot.dataset.index;
+      scenes[idx]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
 </script>
+
 </body>
 </html>
