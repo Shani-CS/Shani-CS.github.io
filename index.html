@@ -17,9 +17,8 @@
     --clr-accent-3: #00e5a0;
     --clr-accent-4: #ff3c8e;
     --clr-accent-5: #ffe156;
-    --font-display: 'Sora', sans-serif;
-    --font-mono: 'Space Mono', monospace;
-    --font-serif: 'Crimson Pro', serif;
+    --font-display: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', -apple-system, sans-serif;
+    --font-serif: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', -apple-system, sans-serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,7 +48,7 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    opacity: 0.1;
+    opacity: 0.15;
     background:
       radial-gradient(ellipse 600px 600px at 15% 20%, var(--clr-accent-2), transparent),
       radial-gradient(ellipse 500px 500px at 80% 10%, var(--clr-accent-4), transparent),
@@ -137,7 +136,7 @@
   }
 
   .hero-name {
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: clamp(2rem, 5.5vw, 4rem);
     font-weight: 800;
     line-height: 1.05;
     margin-bottom: 1.5rem;
