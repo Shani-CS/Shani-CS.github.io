@@ -301,12 +301,17 @@
     align-items: start;
   }
 
-    .dog-grid {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
+ .dog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.dog-grid .about-photo-wrapper {
+  width: 100%;
+}
 
   .about-photo-wrapper {
     position: relative;
@@ -810,6 +815,7 @@
     section { padding: 4rem 5vw; }
     .hero-links { flex-direction: column; }
     .btn { justify-content: center; }
+    .dog-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
