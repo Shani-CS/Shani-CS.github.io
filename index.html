@@ -23,7 +23,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+  
   html { scroll-behavior: smooth; }
 
   body {
@@ -509,6 +509,11 @@
     flex-direction: column;
     gap: 0.8rem;
   }
+  .contact-card .contact-value {
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 80, 104, 0.4);
+  text-underline-offset: 3px;
+}
 
   .contact-card:hover {
     transform: translateY(-4px);
@@ -743,7 +748,9 @@
     gap: 0.5rem;
     font-size: 0.85rem;
     font-weight: 600;
-    text-decoration: none;
+    /* text-decoration: none; */
+    text-decoration: underline;
+    text-underline-offset: 3px;
     transition: all 0.3s;
   }
 
@@ -772,6 +779,8 @@
     z-index: 50;
     opacity: 0;
     transition: opacity 0.4s;
+    padding: 0;
+    font: inherit;
   }
 
   .scroll-dots.visible { opacity: 1; }
@@ -821,11 +830,13 @@
 </head>
 <body>
 
-<div class="bg-mesh"></div>
+<!-- <div class="bg-mesh"></div> -->
+<div class="bg-mesh" aria-hidden="true"></div>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- Navigation -->
-<nav>
-  <!-- <div class="nav-logo">YourName.dev</div> -->
+<nav aria-label="Main navigation">
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -835,12 +846,14 @@
   </ul>
 </nav>
 
+<main id="main-content">
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-tag">PhD Candidate @ Northeastern University</div>
     <h1 class="hero-name">
-      <br><span class="highlight">Shani C Spivak</span>
+      <span class="highlight">Shani C Spivak</span>
     </h1>
     <div class="about-text reveal">
       <p>
@@ -848,9 +861,9 @@
       </p>
     </div>
     <div class="hero-links">
-      <a href="https://vis.khoury.northeastern.edu/" target="_blank">
-      <img src="VisLab.png" alt="Lab Name" style="height:80px;">
-      </a>
+      <a href="https://vis.khoury.northeastern.edu/" target="_blank" aria-label="Visualization Lab at Khoury College">
+  <img src="VisLab.png" alt="Visualization Lab at Khoury College logo" style="height:80px;">
+</a>
       <a href="#about" class="btn btn-outline">About Me →</a>
       <a href="#projects" class="btn btn-outline">Projects →</a>
       <a href="#publications" class="btn btn-primary">Publications →</a>
@@ -918,12 +931,12 @@
   </div>
 
   <!-- Scroll progress dots (fixed on right side) -->
-  <div class="scroll-dots" id="scrollDots">
-    <div class="scroll-dot" data-index="0"></div>
-    <div class="scroll-dot" data-index="1"></div>
-    <div class="scroll-dot" data-index="2"></div>
-    <div class="scroll-dot" data-index="3"></div>
-  </div>
+ <nav class="scroll-dots" id="scrollDots" aria-label="Project navigation">
+  <button class="scroll-dot" data-index="0" aria-label="Go to Project 1: AUXEL" type="button"></button>
+  <button class="scroll-dot" data-index="1" aria-label="Go to Project 2: Mental Models of AI" type="button"></button>
+  <button class="scroll-dot" data-index="2" aria-label="Go to Project 3: Surfacing LLM Errors" type="button"></button>
+  <button class="scroll-dot" data-index="3" aria-label="Go to Project 4: IEEE VIS 2026" type="button"></button>
+</nav>
 
   <div class="projects-wrapper">
     <div class="projects-track">
@@ -934,7 +947,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 3v18"/></svg> -->
-              <img src="Auxel.jpg" alt="Project 1" style="width:100%;height:100%;object-fit:cover;">
+              <img src="Auxel.jpg" alt="Screenshot of the AUXEL accessible data interface" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -959,7 +972,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg> -->
-              <img src="AIMM.jpg" alt="Project 2" style="width:100%;height:100%;object-fit:cover;">
+              <img src="AIMM.jpg" alt="Visualization of people's mental models of AI" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -985,7 +998,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h10M4 18h14"/></svg> -->
-              <img src="LLMErrors.jpg" alt="Project 3" style="width:100%;height:100%;object-fit:cover;">
+              <img src="LLMErrors.jpg" alt="Code visualizations for surfacing LLM errors" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1010,7 +1023,7 @@
           <div class="project-visual">
             <div class="project-visual-inner">
               <!-- <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> -->
-              <img src="2026VIS.jpg" alt="Project 1" style="width:100%;height:100%;object-fit:cover;">
+              <img src="2026VIS.jpg" alt="IEEE VIS 2026 conference Boston skyline" style="width:100%;height:100%;object-fit:cover;">
             </div>
           </div>
           <div class="project-content">
@@ -1047,13 +1060,13 @@
         <div class="pub-title">Fiction vs Friction: Challenges in Evaluating LLMs on Data Visualization Tasks</div>
         <div class="pub-authors"><span class="me">Shani C Spivak</span>, Melanie Tory</div>
         <div class="pub-links">
-          <a href="https://heal-workshop.github.io/chi2025_papers/fiction_vs_friction.pdf" target="_blank" class="pub-link">[PDF]</a>
+          <a href="https://heal-workshop.github.io/chi2025_papers/fiction_vs_friction.pdf" target="_blank" class="pub-link" aria-label="PDF of Fiction vs Friction paper">[PDF]</a>
           <!-- <a href="#" class="pub-link">[Code]</a>
           <a href="#" class="pub-link">[BibTeX]</a> -->
         </div>
       </div>
       <div class="pub-card-img">
-        <img src="HEAL.png" alt="Paper figure">
+        <img src="HEAL.png" alt="Title and portion of paper">
       </div>
     </div>
 
@@ -1063,13 +1076,13 @@
         <div class="pub-title">The Many Tendrils of the Octopus Map</div>
         <div class="pub-authors">Eduardo Puerta*, <span class="me">Shani C Spivak*</span>, Michael Correll</div>
         <div class="pub-links">
-          <a href="https://dl.acm.org/doi/10.1145/3706598.3713583" target="_blank" class="pub-link">[PDF]</a>
-          <a href="https://osf.io/8n5ah/overview?view_only=7f14c46cd644467fbe89c6ce4c01eb2a" target="_blank" class="pub-link">[OSF]</a>
+          <a href="https://dl.acm.org/doi/10.1145/3706598.3713583" target="_blank" class="pub-link" aria-label="PDF of The Many Tendrils of the Octopus Map">[PDF]</a>
+          <a href="https://osf.io/8n5ah/overview?view_only=7f14c46cd644467fbe89c6ce4c01eb2a" target="_blank" class="pub-link" aria-label="Open Science Framework materials for Octopus Map paper">[OSF]</a>
           <!-- <a href="#" class="pub-link">[Poster]</a> -->
         </div>
       </div>
       <div class="pub-card-img">
-        <img src="Octopus.png" alt="Paper figure">
+        <img src="Octopus.png" alt="Teaser figure from the paper showing a big red octopus with tenticles in CHI locations">
       </div>
     </div> 
 
@@ -1097,23 +1110,23 @@
     <h2 class="section-title">Let's Connect</h2>
   </div>
   <div class="contact-grid reveal">
-    <a href="mailto:spivak.s@northeastern.edu" class="contact-card">
-      <div class="contact-icon">✉️</div>
+    <a href="mailto:spivak.s@northeastern.edu" class="contact-card" aria-label="Email Shani Spivak">
+      <div class="contact-icon" aria-hidden="true">✉️</div>
       <div class="contact-label">Email</div>
       <div class="contact-value">spivak.s@northeastern.edu</div>
     </a>
-    <a href="https://scholar.google.com/citations?user=v8--kpYAAAAJ&hl=en" target="_blank" class="contact-card">
-      <div class="contact-icon">🎓</div>
+    <a href="https://scholar.google.com/citations?user=v8--kpYAAAAJ&hl=en" target="_blank" class="contact-card" aria-label="Shani Spivak on Google Scholar">
+      <div class="contact-icon" aria-hidden="true">🎓</div>
       <div class="contact-label">Google Scholar</div>
       <div class="contact-value">Shani Spivak</div>
     </a>
-    <a href="https://github.com/Shani-CS" target="_blank" class="contact-card">
-      <div class="contact-icon">💻</div>
+    <a href="https://github.com/Shani-CS" target="_blank" class="contact-card" aria-label="Shani Spivak on GitHub">
+      <div class="contact-icon" aria-hidden="true">💻</div>
       <div class="contact-label">GitHub</div>
       <div class="contact-value">@Shani-CS</div>
     </a>
-     <a href="https://linkedin.com/in/shani-cs" target="_blank" class="contact-card">
-      <div class="contact-icon">💼</div>
+     <a href="https://linkedin.com/in/shani-cs" target="_blank" class="contact-card" aria-label="Shani Spivak on LinkedIn">
+      <div class="contact-icon" aria-hidden="true">💼</div>
       <div class="contact-label">LinkedIn</div>
       <div class="contact-value">@shani-cs</div>
     </a>
@@ -1129,16 +1142,22 @@
   </div>
 <div class="dog-grid"> 
     <div class="about-photo-wrapper reveal">
-      <img src="Maggie5.jpg" alt="dog">
+      <img src="Maggie5.jpg" alt="Maggie the dog">
     </div>
     <div class="about-photo-wrapper reveal">
-      <img src="Maggie3.jpg" alt="dog">
+      <img src="Maggie3.jpg" alt="Maggie with a toy">
+    </div>
+   <div class="about-photo-wrapper reveal">
+      <img src="Maggie6.jpg" alt="Maggie sitting nicely">
     </div>
     <div class="about-photo-wrapper reveal">
-      <img src="Maggiesmush.jpg" alt="dog">
+      <img src="Maggiesmush.jpg" alt="Maggie asleep with a smushed face">
     </div>
     <div class="about-photo-wrapper reveal">
-      <img src="Maggie.jpg" alt="dog">
+      <img src="Maggie.jpg" alt="Maggie half on the couch">
+    </div>
+   <div class="about-photo-wrapper reveal">
+      <img src="Maggie2.jpg" alt="Maggie sleeping on a couch">
     </div>
  
  </div>    
@@ -1148,6 +1167,8 @@
       
   
 </section>
+
+</main>
   
 <!-- Footer -->
 <footer>
@@ -1189,6 +1210,13 @@
 
   scenes.forEach(scene => sceneObserver.observe(scene));
 
+  dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    if (scenes[i]) {
+      scenes[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+});
   // Show/hide dots only when inside projects section
   const dotsVisibility = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
