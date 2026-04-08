@@ -21,8 +21,69 @@
     --font-display: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', -apple-system, sans-serif;
     --font-serif: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', -apple-system, sans-serif;
   }
+.a11y-link {
+  margin-left: auto;
+  color: var(--clr-text-dim);
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 80, 104, 0.4);
+  text-underline-offset: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
 
+.a11y-link:hover,
+.a11y-link:focus {
+  color: var(--clr-accent-2);
+  text-decoration-color: var(--clr-accent-2);
+}
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--clr-accent-1);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0 0 8px 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 10000;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--clr-accent-2);
+  outline-offset: 2px;
+}
+
+/* Visible focus ring for keyboard users */
+*:focus-visible {
+  outline: 3px solid var(--clr-accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .hero-tag, .hero-name, .hero-bio, .hero-links {
+    opacity: 1; animation: none;
+  }
+  .project-visual, .project-content {
+    opacity: 1; transform: none;
+  }
+}
   
   html { scroll-behavior: smooth; }
 
@@ -846,6 +907,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#maggie">Dog</a></li>
   </ul>
+  <a href="https://www.w3.org/TR/2024/REC-WCAG22-20241212/" class="a11y-link">Accessibility</a>
 </nav>
 
 <main id="main-content">
